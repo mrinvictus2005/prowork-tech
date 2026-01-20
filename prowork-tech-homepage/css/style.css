@@ -1,0 +1,1292 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #070b14;
+  --text: #ecf2ff;
+  --muted: rgba(236, 242, 255, 0.72);
+
+  --primary: #5b8cff;
+  --primary2: #22c55e;
+  --violet: #a855f7;
+
+  --shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  --shadow2: 0 14px 40px rgba(0, 0, 0, 0.35);
+
+  --radius: 22px;
+  --radius2: 16px;
+}
+
+/* ✅ RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(1000px 500px at 15% 0%, rgba(91, 140, 255, 0.22), transparent 55%),
+    radial-gradient(900px 450px at 85% 15%, rgba(168, 85, 247, 0.18), transparent 55%),
+    radial-gradient(800px 420px at 55% 85%, rgba(34, 197, 94, 0.15), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.18);
+  border-radius: 999px;
+  border: 2px solid rgba(0,0,0,0.25);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ✅ CONTAINER SPACING */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+@media (max-width: 1100px) {
+  .container { padding: 0 28px; }
+}
+@media (max-width: 700px) {
+  .container { padding: 0 16px; }
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(7, 11, 20, 0.65);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.logo-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(236, 242, 255, 0.78);
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 14px;
+  transition: 0.2s ease;
+}
+
+/* ✅ All nav items boxed like Contact */
+.nav-box {
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.04);
+}
+
+.nav-box:hover {
+  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.07);
+}
+
+/* ✅ Active highlight on scroll */
+.nav-links a.active {
+  background: rgba(91, 140, 255, 0.18);
+  border: 1px solid rgba(91, 140, 255, 0.35);
+  color: #fff;
+}
+
+/* Contact button slightly stronger */
+.nav-cta {
+  box-shadow: 0 10px 22px rgba(91, 140, 255, 0.12);
+}
+
+/* Mobile menu */
+.menu-btn {
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(236, 242, 255, 0.9);
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+/* =========================
+   HERO (FULL BACKGROUND OVERLAY)
+========================= */
+.hero {
+  position: relative;
+  padding: 90px 0 60px;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/hero-bg.jpg") center/cover no-repeat;
+  opacity: 0.38;
+  z-index: 0;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 11, 20, 0.95) 10%,
+    rgba(7, 11, 20, 0.7) 55%,
+    rgba(7, 11, 20, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.1;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--primary), var(--violet), var(--primary2));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  font-size: 16.5px;
+  max-width: 650px;
+}
+
+.hero-actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, rgba(91, 140, 255, 0.95), rgba(168, 85, 247, 0.8));
+  color: #fff;
+  box-shadow: 0 22px 40px rgba(91, 140, 255, 0.20);
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.hero-stats {
+  margin-top: 26px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  padding: 14px 16px;
+  border-radius: var(--radius2);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  min-width: 160px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.hero-image-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 26px;
+  overflow: hidden;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+}
+
+.hero-image-placeholder {
+  display: none;
+}
+
+/* =========================
+   SECTIONS + CARDS
+========================= */
+.section {
+  padding: 92px 0;
+}
+
+.section-alt {
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.section-head h2 {
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 800;
+}
+
+.section-head p {
+  color: var(--muted);
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius);
+  padding: 20px;
+  backdrop-filter: blur(14px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  box-shadow: var(--shadow2);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* Services */
+.services-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+/* Demo */
+.demo-wrap {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: start;
+  gap: 22px;
+}
+
+.workflow {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.workflow li {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius2);
+}
+
+.step {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  color: #06101e;
+}
+
+.video-box {
+  height: 210px;
+  margin-top: 14px;
+  border-radius: 18px;
+  border: 1px dashed rgba(255,255,255,0.20);
+  display: grid;
+  place-items: center;
+  color: rgba(236,242,255,0.65);
+  background: rgba(255,255,255,0.02);
+}
+
+.mini-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+/* Testimonials */
+.testimonial-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.quote {
+  font-weight: 650;
+  margin-bottom: 16px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+}
+
+.faq-q {
+  width: 100%;
+  text-align: left;
+  padding: 16px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-a {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  color: var(--muted);
+}
+
+.faq-item.active .faq-a {
+  padding: 0 18px 16px;
+  max-height: 240px;
+}
+
+/* =========================
+   FOOTER + CONTACT
+========================= */
+.footer {
+  padding: 60px 0 28px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.footer-desc {
+  margin-top: 8px;
+}
+
+/* ✅ Social Icons */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: rgba(236,242,255,0.85);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(91, 140, 255, 0.45);
+  background: rgba(91, 140, 255, 0.10);
+}
+
+.social-btn i {
+  font-size: 18px;
+}
+
+/* ✅ Professional Contact Card */
+.contact-card {
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02)
+  );
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+}
+
+.contact-form {
+  margin-top: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.btn.full {
+  width: 100%;
+}
+
+.form-status {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  text-align: center;
+  color: rgba(236,242,255,0.65);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1000px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 62px;
+    right: 4%;
+    width: 92%;
+    background: rgba(7, 11, 20, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: var(--radius);
+    padding: 14px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* =========================
+   CONTACT SECTION - UNIQUE UPGRADE
+========================= */
+
+.contact-card {
+  padding: 26px;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+  box-shadow: 0 18px 55px rgba(0,0,0,0.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: -120px;
+  background: radial-gradient(420px 220px at 20% 0%,
+    rgba(91, 140, 255, 0.22),
+    transparent 60%);
+  filter: blur(16px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.contact-head {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 16px;
+}
+
+.contact-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(91,140,255,0.9), rgba(168,85,247,0.75));
+  box-shadow: 0 16px 35px rgba(91, 140, 255, 0.25);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: #fff;
+  flex: 0 0 auto;
+}
+
+.contact-title h3 {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 3px;
+}
+
+.contact-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.95fr 1.2fr;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+/* Left info card */
+.contact-info {
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+
+.contact-info h4 {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.info-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  margin-top: 10px;
+}
+
+.info-ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(236,242,255,0.85);
+}
+
+.info-label {
+  font-size: 12px;
+  color: rgba(236,242,255,0.6);
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(236,242,255,0.92);
+}
+
+.contact-mini-note {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(34,197,94,0.25);
+  background: rgba(34,197,94,0.08);
+  color: rgba(236,242,255,0.9);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.contact-mini-note i {
+  color: rgba(34,197,94,0.95);
+}
+
+/* Form inputs with icons */
+.contact-form {
+  margin-top: 0;
+}
+
+.input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrap i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(236,242,255,0.55);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.input-wrap input,
+.input-wrap textarea {
+  width: 100%;
+  padding: 13px 14px 13px 42px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  outline: none;
+  transition: 0.22s ease;
+}
+
+.textarea-wrap i {
+  top: 18px;
+  transform: none;
+}
+
+.textarea-wrap textarea {
+  padding-top: 14px;
+  min-height: 140px;
+  resize: none;
+}
+
+.input-wrap input:focus,
+.input-wrap textarea:focus {
+  border-color: rgba(91, 140, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(91, 140, 255, 0.14);
+}
+
+/* Better grid in form */
+.row.single {
+  grid-template-columns: 1fr;
+}
+
+/* Premium button glow */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+    transparent,
+    rgba(255,255,255,0.18),
+    transparent);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.btn-glow:hover::after {
+  transform: translateX(120%);
+}
+
+/* Responsive contact grid */
+@media (max-width: 1000px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ============================
+   CONTACT CENTER (UPDATED)
+============================ */
+
+.contact-head-center {
+  margin-bottom: 28px;
+}
+
+.contact-center-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-card-centered {
+  width: 100%;
+  max-width: 1050px;
+  padding: 28px;
+}
+
+.contact-top {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.contact-social-box {
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+
+.contact-social-row {
+  margin-top: 14px;
+}
+
+.contact-form-wrap {
+  margin-top: 10px;
+}
+
+.contact-form-centered {
+  width: 100%;
+}
+
+.input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrap i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(236,242,255,0.55);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.input-wrap input,
+.input-wrap textarea {
+  padding-left: 42px !important;
+}
+
+.textarea-wrap i {
+  top: 18px;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-card-centered {
+    padding: 18px;
+  }
+}
+/* =========================
+   CONTACT FORM INPUT FIX
+   Bigger + more visible fields
+========================= */
+
+.contact-form .input-wrap input,
+.contact-form .input-wrap textarea {
+  width: 100%;
+  height: 54px;               /* ✅ Bigger box height */
+  font-size: 15.5px;          /* ✅ Bigger typing size */
+  font-weight: 600;
+  padding: 14px 16px 14px 46px; /* ✅ left padding for icon space */
+  border-radius: 18px;
+  line-height: 1.2;
+}
+
+/* ✅ textarea should be bigger */
+.contact-form .input-wrap textarea {
+  height: 140px;              /* ✅ Proper message box */
+  resize: none;
+  padding-top: 16px;
+}
+
+/* ✅ placeholder more visible */
+.contact-form .input-wrap input::placeholder,
+.contact-form .input-wrap textarea::placeholder {
+  font-size: 14.5px;
+  color: rgba(236, 242, 255, 0.55);
+}
+
+/* ✅ icons center alignment */
+.contact-form .input-wrap i {
+  font-size: 15px;
+  left: 16px;
+}
+
+/* ✅ better focus effect */
+.contact-form .input-wrap input:focus,
+.contact-form .input-wrap textarea:focus {
+  border-color: rgba(91, 140, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(91, 140, 255, 0.18);
+}
+
+/* ✅ small screen adjustments */
+@media (max-width: 600px) {
+  .contact-form .input-wrap input,
+  .contact-form .input-wrap textarea {
+    height: 52px;
+    font-size: 15px;
+  }
+
+  .contact-form .input-wrap textarea {
+    height: 150px;
+  }
+}
+/* ==================================
+   CONTACT INPUT FIX (Email Cut + Bigger)
+================================== */
+
+/* ✅ Make row inputs more space */
+.contact-form .row {
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ✅ Input box bigger + full width */
+.contact-form .input-wrap input,
+.contact-form .input-wrap textarea {
+  width: 100%;
+  min-width: 0; /* ✅ VERY IMPORTANT (prevents cut in grid) */
+  height: 58px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 16px 14px 50px; /* left padding for icon */
+  border-radius: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ✅ Fix email cutting issue specifically */
+.contact-form input[type="email"] {
+  min-width: 0;
+}
+
+/* ✅ textarea bigger */
+.contact-form .input-wrap textarea {
+  height: 160px;
+  white-space: normal;
+  overflow: auto;
+  padding-top: 16px;
+  resize: none;
+}
+
+/* ✅ icon alignment inside input */
+.contact-form .input-wrap i {
+  left: 18px;
+  font-size: 15px;
+}
+
+/* ✅ Better focus */
+.contact-form .input-wrap input:focus,
+.contact-form .input-wrap textarea:focus {
+  border-color: rgba(91, 140, 255, 0.75);
+  box-shadow: 0 0 0 4px rgba(91, 140, 255, 0.20);
+}
+
+/* ✅ Mobile fix: 1 column */
+@media (max-width: 650px) {
+  .contact-form .row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form .input-wrap input {
+    height: 56px;
+  }
+
+  .contact-form .input-wrap textarea {
+    height: 170px;
+  }
+}
+.contact-form .input-wrap {
+  width: 100%;
+  min-width: 0;
+}
+/* =========================================
+   FOOTER CONTACT CENTER + FULL WIDTH
+========================================= */
+
+/* ✅ Top brand section centered */
+.footer-top {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-top .footer-social {
+  justify-content: center;
+}
+
+/* ✅ Contact card now goes down & centered */
+.contact-card-center {
+  margin-top: 45px;
+  width: 100%;
+  max-width: 1100px;  /* ✅ Bigger width */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+/* ✅ Make contact grid wider */
+.contact-card-center .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* ✅ form a bit wider */
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* ✅ inputs full width */
+.contact-card-center .contact-form {
+  width: 100%;
+}
+
+/* ✅ Responsive */
+@media (max-width: 900px) {
+  .contact-card-center {
+    padding: 22px;
+  }
+
+  .contact-card-center .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    text-align: left;
+  }
+
+  .footer-top .footer-social {
+    justify-content: flex-start;
+  }
+}
+/* ✅ Video should stay inside the preview box */
+.media-box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  position: relative;
+}
+
+/* ✅ Make video full width inside box */
+.media-box video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* ✅ video crop hoke premium look देगा */
+  border-radius: 18px;
+}
+.media-box {
+  height: 230px; /* tum adjust kar sakte ho */
+}
+/* ✅ NAVBAR BOXES SAME WIDTH */
+.nav-links li {
+  flex: 1;
+}
+
+.nav-links a.nav-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;   /* ✅ all same width */
+  height: 42px;   /* ✅ same height */
+  text-align: center;
+  padding: 0 !important;
+}
+
+/* ✅ Mobile menu full width boxes */
+@media (max-width: 600px) {
+  .nav-links li {
+    width: 100%;
+    flex: unset;
+  }
+
+  .nav-links a.nav-box {
+    width: 100%;
+    height: 46px;
+  }
+}
+/* ===========================
+   NAVBAR: Same width boxes + Mobile alignment FIX
+=========================== */
+
+/* Desktop: keep nav items in one row */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+}
+
+/* Desktop: make all nav boxes equal width */
+.nav-links a.nav-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;      /* ✅ Same width for all */
+  height: 42px;      /* ✅ Same height */
+  padding: 0 !important;
+  text-align: center;
+}
+
+/* CTA same size too */
+.nav-links a.nav-cta {
+  width: 120px;
+  height: 42px;
+}
+
+/* ✅ Mobile: perfect vertical menu alignment */
+@media (max-width: 600px) {
+  .nav-links {
+    position: absolute;
+    top: 62px;
+    right: 3%;
+    width: 94%;
+    background: rgba(7, 11, 20, 0.92);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 22px;
+    padding: 14px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* ✅ Mobile: each item full width */
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a.nav-box,
+  .nav-links a.nav-cta {
+    width: 100%;
+    height: 46px;
+    justify-content: center;
+  }
+}
+/* ✅ Smooth Mobile Navbar Animation (No design change) */
+@media (max-width: 600px) {
+  .nav-links {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}/* ✅ Smooth Mobile Navbar Animation (No design change) */
+@media (max-width: 600px) {
+  .nav-links {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
