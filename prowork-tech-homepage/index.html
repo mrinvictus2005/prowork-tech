@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prowork Tech helps businesses build scalable digital solutions with modern UI/UX, automation, and deployment support." />
   <title>Prowork Tech | Home</title>
 
   <link rel="stylesheet" href="./css/style.css" />
-
-  <!-- ✅ Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-  <!-- NAVBAR Menu -->
+
+  <!-- ================================
+       NAVBAR
+  ================================ -->
   <header class="header">
     <nav class="navbar container">
       <div class="logo">
@@ -20,23 +22,28 @@
         <span class="logo-text">Prowork Tech</span>
       </div>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">
-        <span></span><span></span><span></span>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#services" class="nav-link nav-box">Services</a></li>
-        <li><a href="#demo" class="nav-link nav-box">Demo</a></li>
+        <li><a href="#services"     class="nav-link nav-box">Services</a></li>
+        <li><a href="#demo"         class="nav-link nav-box">Demo</a></li>
         <li><a href="#testimonials" class="nav-link nav-box">Testimonials</a></li>
-        <li><a href="#faq" class="nav-link nav-box">FAQs</a></li>
-        <li><a href="#contact" class="nav-link nav-box nav-cta">Contact</a></li>
+        <li><a href="#faq"          class="nav-link nav-box">FAQs</a></li>
+        <li><a href="#contact"      class="nav-link nav-box nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- ================================
+       HERO
+  ================================ -->
   <section class="hero hero-bg reveal" id="home">
     <div class="container hero-inner">
+
       <div class="hero-left">
         <p class="hero-badge">Modern Business Solutions</p>
 
@@ -51,7 +58,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#contact" class="btn primary">Get Started</a>
+          <a href="#contact"  class="btn primary">Get Started</a>
           <a href="#services" class="btn secondary">Explore Services</a>
         </div>
 
@@ -73,13 +80,16 @@
 
       <div class="hero-right">
         <div class="hero-image-card">
-          <img src="./assets/hero.png" alt="Prowork Tech Hero Image" />
+          <img src="./assets/hero.png" alt="Prowork Tech Hero Image" loading="lazy" />
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
+  <!-- ================================
+       SERVICES
+  ================================ -->
   <section class="section reveal" id="services">
     <div class="container">
       <div class="section-head">
@@ -89,46 +99,48 @@
 
       <div class="grid services-grid">
         <div class="card service-card">
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
           <h3>Web Development</h3>
           <p>Responsive, fast, and scalable websites built with clean UI/UX.</p>
         </div>
-
         <div class="card service-card">
+          <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
           <h3>UI/UX Design</h3>
           <p>Modern designs that improve user engagement and conversions.</p>
         </div>
-
         <div class="card service-card">
+          <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
           <h3>Business Automation</h3>
           <p>Automate workflows to save time and reduce operational cost.</p>
         </div>
-
         <div class="card service-card">
+          <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
           <h3>Product MVP Development</h3>
           <p>Launch your startup idea with a production-grade MVP quickly.</p>
         </div>
-
         <div class="card service-card">
-          <h3>Cloud & Deployment</h3>
+          <div class="service-icon"><i class="fa-solid fa-cloud"></i></div>
+          <h3>Cloud &amp; Deployment</h3>
           <p>Deploy websites and apps with best practices on Vercel/Netlify.</p>
         </div>
-
         <div class="card service-card">
-          <h3>Maintenance & Support</h3>
+          <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+          <h3>Maintenance &amp; Support</h3>
           <p>Ongoing updates, improvements, bug fixes, and monitoring.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEMONSTRATION SECTION -->
+  <!-- ================================
+       DEMONSTRATION
+  ================================ -->
   <section class="section section-alt reveal" id="demo">
     <div class="container demo-wrap">
+
       <div class="demo-left">
         <h2>Demonstration</h2>
-        <p class="muted">
-          Here’s how we work step-by-step to deliver results, faster.
-        </p>
+        <p class="muted">Here's how we work step-by-step to deliver results, faster.</p>
 
         <ol class="workflow">
           <li>
@@ -138,27 +150,24 @@
               <p>We understand your business goals and technical requirements.</p>
             </div>
           </li>
-
           <li>
             <span class="step">2</span>
             <div>
-              <h4>Design & Planning</h4>
+              <h4>Design &amp; Planning</h4>
               <p>We create wireframes, UI design and project timeline.</p>
             </div>
           </li>
-
           <li>
             <span class="step">3</span>
             <div>
-              <h4>Development & Testing</h4>
+              <h4>Development &amp; Testing</h4>
               <p>We build the product using clean code and test carefully.</p>
             </div>
           </li>
-
           <li>
             <span class="step">4</span>
             <div>
-              <h4>Deployment & Support</h4>
+              <h4>Deployment &amp; Support</h4>
               <p>We deploy on cloud and provide post-launch support.</p>
             </div>
           </li>
@@ -170,7 +179,6 @@
           <h3>Workflow Preview</h3>
           <p class="muted">Professional workflow video preview below.</p>
 
-          <!-- ✅ WORKFLOW VIDEO (place assets/workflow.mp4) -->
           <div class="video-box media-box">
             <video autoplay muted loop playsinline>
               <source src="./assets/workflow.mp4" type="video/mp4" />
@@ -183,7 +191,6 @@
               <h4>Fast Delivery</h4>
               <p>Quick iterations and milestone-based execution.</p>
             </div>
-
             <div class="mini">
               <h4>Modern Stack</h4>
               <p>HTML/CSS/JS or React-based builds.</p>
@@ -191,10 +198,13 @@
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- TESTIMONIAL SECTION -->
+  <!-- ================================
+       TESTIMONIALS
+  ================================ -->
   <section class="section reveal" id="testimonials">
     <div class="container">
       <div class="section-head">
@@ -204,9 +214,7 @@
 
       <div class="grid testimonial-grid">
         <div class="card testimonial-card">
-          <p class="quote">
-            “Prowork Tech built our website beautifully. The delivery was quick and professional.”
-          </p>
+          <p class="quote">"Prowork Tech built our website beautifully. The delivery was quick and professional."</p>
           <div class="author">
             <div class="avatar">A</div>
             <div>
@@ -217,9 +225,7 @@
         </div>
 
         <div class="card testimonial-card">
-          <p class="quote">
-            “Excellent UI/UX and very responsive design. Our conversions improved noticeably.”
-          </p>
+          <p class="quote">"Excellent UI/UX and very responsive design. Our conversions improved noticeably."</p>
           <div class="author">
             <div class="avatar">R</div>
             <div>
@@ -230,9 +236,7 @@
         </div>
 
         <div class="card testimonial-card">
-          <p class="quote">
-            “They made the contact form functional and deployed it properly. Great service!”
-          </p>
+          <p class="quote">"They made the contact form functional and deployed it properly. Great service!"</p>
           <div class="author">
             <div class="avatar">S</div>
             <div>
@@ -245,7 +249,9 @@
     </div>
   </section>
 
-  <!-- FAQ SECTION -->
+  <!-- ================================
+       FAQ
+  ================================ -->
   <section class="section section-alt reveal" id="faq">
     <div class="container">
       <div class="section-head">
@@ -290,7 +296,7 @@
             <span class="icon">+</span>
           </button>
           <div class="faq-a">
-            Yes. This form captures data in JavaScript, and you can connect it to Formspree/email/backend easily.
+            Yes. This form captures data in JavaScript and is connected to Formspree for real email delivery.
           </div>
         </div>
 
@@ -306,139 +312,136 @@
       </div>
     </div>
   </section>
-<!-- CONTACT + FOOTER -->
-<footer class="footer reveal" id="contact">
-  <div class="container">
-    
-    <!-- ✅ Footer Left (Brand + Social) -->
-    <div class="footer-left footer-top">
-      <div class="logo footer-logo">
-        <span class="logo-dot"></span>
-        <span class="logo-text">Prowork Tech</span>
-      </div>
 
-      <p class="muted footer-desc">
-        Prowork Tech helps businesses build scalable digital solutions with modern UI/UX,
-        performance optimization, and deployment support.
-      </p>
+  <!-- ================================
+       FOOTER + CONTACT
+  ================================ -->
+  <footer class="footer reveal" id="contact">
+    <div class="container">
 
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/alokgupta2005" target="_blank" aria-label="LinkedIn" class="social-btn">
-  <i class="fa-brands fa-linkedin-in"></i>
-</a>
-
-
-       <a href="https://twitter.com/classy_alok20" target="_blank" aria-label="Twitter" class="social-btn">
-  <i class="fa-brands fa-x-twitter"></i>
-</a>
-
-
-       <a href="https://www.instagram.com/mr.alokguptaofficial" target="_blank" aria-label="Instagram" class="social-btn">
-  <i class="fa-brands fa-instagram"></i>
-</a>
-<a href="https://wa.me/9140575329" target="_blank" aria-label="WhatsApp" class="social-btn">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-      </div>
-    </div>
-
-    <!-- ✅ Contact Card (Now Centered + Down) -->
-    <div class="contact-card contact-card-center">
-      <div class="contact-head">
-        <div class="contact-title">
-          <span class="contact-icon">
-            <i class="fa-solid fa-paper-plane"></i>
-          </span>
-          <div>
-            <h3>Contact Us</h3>
-            <p class="muted">Fill the form below — we’ll get back within 24 hours.</p>
-          </div>
+      <!-- Brand -->
+      <div class="footer-left footer-top">
+        <div class="logo footer-logo">
+          <span class="logo-dot"></span>
+          <span class="logo-text">Prowork Tech</span>
+        </div>
+        <p class="muted footer-desc">
+          Prowork Tech helps businesses build scalable digital solutions with modern UI/UX,
+          performance optimization, and deployment support.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/alokgupta2005" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-btn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://twitter.com/classy_alok20" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="social-btn">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/mr.alokguptaofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-btn">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/9140575329" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
         </div>
       </div>
 
-      <div class="contact-grid">
-        <!-- Info -->
-        <div class="contact-info">
-          <h4>Quick Contact</h4>
-          <p class="muted">Reach us directly anytime.</p>
-
-          <div class="info-item">
-            <span class="info-ico"><i class="fa-solid fa-envelope"></i></span>
+      <!-- Contact Card -->
+      <div class="contact-card contact-card-center">
+        <div class="contact-head">
+          <div class="contact-title">
+            <span class="contact-icon">
+              <i class="fa-solid fa-paper-plane"></i>
+            </span>
             <div>
-              <p class="info-label">Email</p>
-              <p class="info-value">mrclassy49849@gmail.com</p>
+              <h3>Contact Us</h3>
+              <p class="muted">Fill the form below — we'll get back within 24 hours.</p>
             </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-ico"><i class="fa-solid fa-phone"></i></span>
-            <div>
-              <p class="info-label">Phone</p>
-              <p class="info-value">+91 9140575329</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-ico"><i class="fa-solid fa-location-dot"></i></span>
-            <div>
-              <p class="info-label">Location</p>
-              <p class="info-value">India</p>
-            </div>
-          </div>
-
-          <div class="contact-mini-note">
-            <i class="fa-solid fa-shield"></i>
-            <span>Your details are safe. No spam.</span>
           </div>
         </div>
 
-        <!-- ✅ Form (Working Formspree) -->
-        <form
-          id="contactForm"
-          class="contact-form"
-          action="https://formspree.io/f/xqeedegk"
-          method="POST"
-        >
-          <div class="row">
-            <div class="input-wrap">
-              <i class="fa-solid fa-user"></i>
-              <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <div class="contact-grid">
+          <!-- Info -->
+          <div class="contact-info">
+            <h4>Quick Contact</h4>
+            <p class="muted">Reach us directly anytime.</p>
+
+            <div class="info-item">
+              <span class="info-ico"><i class="fa-solid fa-envelope"></i></span>
+              <div>
+                <p class="info-label">Email</p>
+                <p class="info-value">mrclassy49849@gmail.com</p>
+              </div>
             </div>
 
-            <div class="input-wrap">
-              <i class="fa-solid fa-envelope"></i>
-              <input type="email" id="email" name="email" placeholder="Email Address" required />
+            <div class="info-item">
+              <span class="info-ico"><i class="fa-solid fa-phone"></i></span>
+              <div>
+                <p class="info-label">Phone</p>
+                <p class="info-value">+91 9140575329</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-ico"><i class="fa-solid fa-location-dot"></i></span>
+              <div>
+                <p class="info-label">Location</p>
+                <p class="info-value">India</p>
+              </div>
+            </div>
+
+            <div class="contact-mini-note">
+              <i class="fa-solid fa-shield"></i>
+              <span>Your details are safe. No spam.</span>
             </div>
           </div>
 
-          <div class="row single">
-            <div class="input-wrap">
-              <i class="fa-solid fa-phone"></i>
-              <input type="tel" id="phone" name="phone" placeholder="Contact Number" required />
+          <!-- Form -->
+          <form
+            id="contactForm"
+            class="contact-form"
+            action="https://formspree.io/f/xqeedegk"
+            method="POST"
+          >
+            <div class="row">
+              <div class="input-wrap">
+                <i class="fa-solid fa-user"></i>
+                <input type="text"  name="name"  placeholder="Your Name"      required autocomplete="name" />
+              </div>
+              <div class="input-wrap">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email Address"  required autocomplete="email" />
+              </div>
             </div>
-          </div>
 
-          <div class="input-wrap textarea-wrap">
-            <i class="fa-solid fa-message"></i>
-            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-          </div>
+            <div class="row single">
+              <div class="input-wrap">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel"   name="phone" placeholder="Contact Number" required autocomplete="tel" />
+              </div>
+            </div>
 
-          <button type="submit" class="btn primary full btn-glow">
-            Send Message <i class="fa-solid fa-arrow-right"></i>
-          </button>
+            <div class="input-wrap textarea-wrap">
+              <i class="fa-solid fa-message"></i>
+              <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
 
-          <p class="form-status" id="formStatus"></p>
-        </form>
+            <button type="submit" class="btn primary full btn-glow">
+              Send Message <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="form-status" id="formStatus" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> Prowork Tech. All rights reserved.</p>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Prowork Tech. All rights reserved.</p>
+      </div>
+
     </div>
-  </div>
-</footer>
+  </footer>
+
   <script src="./js/script.js"></script>
 </body>
 </html>
